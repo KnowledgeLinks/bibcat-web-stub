@@ -1,0 +1,29 @@
+version: '2'
+
+services:
+  proxy: 
+    build: ./nginx
+    volumes:
+      - letsencrypt_certs:/etc/nginx/certs
+      - letsencrypt_www:/var/www/letsencrypt
+    links:
+      - app:bibcat
+    ports:
+      - "80:80"
+      - "443:443"
+    restart: always
+
+  letsencrypt:
+    build: ./certbot
+    command: /bin/true
+    volumes:
+      - letsencrypt_certs:/etc/nginx/certs
+      - letsencrypt_www:/var/www/letsencrypt
+
+  bibcat:
+    build: .
+    restart: always
+
+volumes:
+  letsencrypt_certs: ~
+  letsencrypt_www: ~ 

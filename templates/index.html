@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<img src="{{ url_for('static', filename="img/bc-logo-blue.png") }}" class="img float-left" alt="BIBCAT Logo"></img>
+<h1>BIBCAT Information</h1>
+<p class="lead">
+  BIBCAT is an open-source middleware technology for managing BIBFRAME RDF data and is sponsored and supported by
+  <a href="http://knowledgelinks.io/">KnowledgeLinks.io</a>. BIBCAT typically is part of a
+  larger digital library or catalog project. The source code repository is hosted on Github at 
+  <a href="https://github.com/KnowledgeLinks/rdfw-bibcat">https://github.com/KnowledgeLinks/rdfw-bibcat</a> 
+</p>
+<div class="row">
+  <div class="col-md-4">
+      <h2>Background</h2>
+        <p>
+            Development of BIBCAT started in 2014 when the Library of Congress issued an RFQ for a BIBFRAME "search and display" 
+            system to highlight BIBFRAME. Aaron Schmidt of <a href="http://weareinflux.com/">Influx Library User Interface Design</a> and Jeremy Nelson 
+            were awarded the contract with the Library of Congress that with the additional of Mike Stabile, resulted in the
+            iteration of BIBCAT - a BIBFRAME Catalog - a lightweight catalog web application that uses the backend BIBFRAME 1.0 Datastore. 
+        </p>
+  </div>
+  <div class="col-md-8">
+    <h2>Example Projects</h2>
+    <div class="row">
+    <div class="col-md-6">
+<section class="card">
+   <div class="card-block">
+       <img class="card-img-top" itemprop="image"
+           src="{{ url_for('static', filename="img/coalliance-logo.png") }}"
+           alt="Colorado Alliance of Research Libraries">
+       <h4 class="card-title">Colorado Alliance BIBCAT Pilot</h4>
+       <h6 class="card-subtitle mb-2 text-muted">Blazegraph Triplestore, RDF Framework, BIBCAT </h6>
+       <p class="card-text">
+            Using selected MARC records from <a href="https://www.coloradocollege.edu/">Colorado College</a> 
+            and the University of Colorado Boulder that were generated from the Alliance's Gold Rush comparison 
+            service and the Library of Congress <a href="https://github.com/lcnetdev/marc2bibframe2">marc2bibframe2</a>
+            project, these MARC records and converted into BIBFRAME 2.0 RDF and stored in a RDF triplestore. 
+            The RDF Linked Library data is
+            published to the web as Schema.org JSON-LD for indexing by Google, Bing, and other search engines. 
+       </p>
+       <a href="https://github.com/KnowledgeLinks/alliance-bibcat" 
+           class="card-link">Source Code Repository</a>
+       <a href="http://bibcat.coalliance.org/" class="card-link">Live Application</a>
+
+   </div>
+</section>
+    </div>
+    <div class="col-md-6">
+<section class="card">
+   <div class="card-block">
+        <img src="{{ url_for('static', filename='img/plains2peaks-tmp-logo.png')}}" class="card-img-top"
+        <h4 class="card-title">Plains2Peaks.org - DPLA Service Hub for Colorado/Wyoming 
+        </h4>
+        <h6 class="card-subtitle mb-2 text-muted">Blazegraph Triplestore, RDF Framework, BIBCAT</h6>
+        <p class="card-text">
+            A <a href="#">State Library of Colorado</a> sponsored effort to aggregate the metadata from across 
+            different libraries and museums in Colorado and Wyoming and provide a JSON-LD DPLA 
+            Map v4 feed to <a href="https://dp.la">DP.LA</a>. 
+        </p>
+       <a href="https://github.com/KnowledgeLinks/dpla-service-hub" 
+           class="card-link">Source Code Repository</a>
+
+       <a href="http://www.plains2peaks.org/" 
+           class="card-link">Live Application</a>
+   </div>
+</section>
+    </div>
+    </div>
+</div>
+{% endblock %}
